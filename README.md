@@ -1,81 +1,98 @@
-AI Code Reviewer
-AI Code Reviewer is a web application that uses an AI model to review code. It highlights issues and provides suggestions in clear, concise bullet points. Users can paste their code into a text area, and the app will give them feedback on how to improve it.
+# AI Code Reviewer
 
-Features
+**AI Code Reviewer** is a web application that uses an AI model to review code. It highlights issues and provides suggestions in clear, concise bullet points. Users can paste their code into a text area, and the app will give them feedback on how to improve it.
 
-Code Review: Paste your code into a text area, and the app sends it to the backend for analysis.
+---
 
-Review Feedback: The backend processes the code and sends back a list of suggestions for improvement.
+## Features
 
-Clean UI: User-friendly interface with modern design.
+- **Code Review**: Paste your code into a text area, and the app sends it to the backend for analysis.
+- **Review Feedback**: The backend processes the code and sends back a list of suggestions for improvement.
+- **Clean UI**: User-friendly interface with a modern design.
+- **Error Handling**: Displays error messages if the review fails.
 
-Error Handling: Displays error messages if the review fails.
+---
 
+## Tech Stack
 
-Tech Stack
+### Frontend
+- **React**: For building the user interface.
+- **Axios**: For making HTTP requests to the backend.
+- **CSS**: Custom styling for the app.
 
-Frontend:
-React: For building the user interface.
+### Backend
+- **Node.js with Express**: For handling backend requests.
+- **AI API (Google Gemini)**: For code analysis and review.
 
-Axios: For making HTTP requests to the backend.
-
-CSS: Custom styling for the app.
-
-Backend:
-Node.js with Express: For handling backend requests.
-
-AI API (Google Gemini): For code analysis and review.
-
-Project Structure
-
-/project-root
-  /backend         # Backend server code
-    server.js      # Server entry point
-    /models        # API and review-related logic
-    /controllers   # Handle API requests
-  /frontend        # React frontend
-    public/        # Public files
-    src/
-      App.js        # Main React component
-      App.css       # App styling
-      index.js      # React app entry point
-  .gitignore        # Git ignore file
-  package.json 
+---
 
 
-  Setup Instructions
-  
-  Backend Setup
+---
 
- Clone the repository: git clone https://github.com/yourusername/ai-code-reviewer.git
-                        cd ai-code-reviewer/backend
+## Setup Instructions
 
- Install dependencies: npm install
+### Backend Setup
 
- Start the backend server: npm start
+1. **Clone the repository**:
+    ```bash
+    git clone https://github.com/yourusername/ai-code-reviewer.git
+    cd ai-code-reviewer/backend
+    ```
 
+2. **Install dependencies**:
+    ```bash
+    npm install
+    ```
 
-Frontend Setup
+3. **Start the backend server**:
+    ```bash
+    npm start
+    ```
+   The backend will be running at `http://localhost:5000`.
 
-Navigate to the frontend directory: cd ai-code-reviewer/frontend
+---
 
-Install dependencies: npm install
+### Frontend Setup
 
-Start the React development server: npm start
+1. **Navigate to the frontend directory**:
+    ```bash
+    cd ai-code-reviewer/frontend
+    ```
 
-The frontend will run at http://localhost:5000
+2. **Install dependencies**:
+    ```bash
+    npm install
+    ```
 
-How It Works
-Backend: Processes code sent via a POST request at /api/review and returns suggestions for improvement.
+3. **Start the React development server**:
+    ```bash
+    npm start
+    ```
+   The frontend will be running at `http://localhost:3000`.
 
-Frontend: Sends the code to the backend and displays the suggestions.
+---
 
-Enhancements & Future Work
-Syntax Highlighting: Improve readability by adding syntax highlighting.
+## How It Works
 
-Dark Mode: Implement dark theme support.
+### Backend
+The backend receives a POST request at `/api/review`, containing the code. It processes the code and returns a list of suggestions for improvement.
 
-Code Formatting: Integrate code formatting features.
+### Frontend
+The frontend sends the code to the backend and displays the suggestions in an easy-to-read format.
 
-AI Customization: Enhance the AI model to provide more personalized suggestions.
+---
+
+## Enhancements & Future Work
+
+- **Syntax Highlighting**: Improve readability by adding syntax highlighting.
+- **Dark Mode**: Implement dark theme support.
+- **Code Formatting**: Integrate code formatting features.
+- **AI Customization**: Enhance the AI model to provide more personalized suggestions.
+
+---
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
 
