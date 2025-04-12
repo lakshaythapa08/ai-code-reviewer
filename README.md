@@ -70,6 +70,25 @@
     ```
    The frontend will be running at `http://localhost:3000`.
 
+4. **Project Structure
+```
+ai-code-reviewer/
+│
+├── backend/                 # Backend server code
+│   ├── server.js            # Entry point for the backend server
+│   ├── /models              # API and review-related logic
+│   └── /controllers         # Handles API requests
+│
+├── frontend/                # React frontend application
+│   ├── public/              # Static public files (index.html, favicon, etc.)
+│   └── src/                 # Source code for the React app
+│       ├── App.js           # Main React component
+│       ├── App.css          # Styling for the app
+│       └── index.js         # Entry point for React
+│
+├── .gitignore               # Files and folders to ignore in Git
+└── package.json             # Project dependencies and scripts
+```
 ---
 
 ## How It Works
