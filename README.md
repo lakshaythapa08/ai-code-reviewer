@@ -76,8 +76,8 @@ ai-code-reviewer/
 │
 ├── backend/                 # Backend server code
 │   ├── server.js            # Entry point for the backend server
-│   ├── /models              # API and review-related logic
-│   └── /controllers         # Handles API requests
+│   ├── /routes              # Defines API routes
+│   └── /utils               # Utility functions and AI integration logic
 │
 ├── frontend/                # React frontend application
 │   ├── public/              # Static public files (index.html, favicon, etc.)
@@ -87,7 +87,9 @@ ai-code-reviewer/
 │       └── index.js         # Entry point for React
 │
 ├── .gitignore               # Files and folders to ignore in Git
-└── package.json             # Project dependencies and scripts
+├── package.json             # Project dependencies and scripts
+└── LICENSE                  # MIT License for this project
+
 ```
 ---
 
