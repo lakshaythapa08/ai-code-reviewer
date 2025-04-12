@@ -70,7 +70,7 @@
     ```
    The frontend will be running at `http://localhost:3000`.
 
-4. **Project Structure
+4. **Project Structure**:
 ```
 ai-code-reviewer/
 │
