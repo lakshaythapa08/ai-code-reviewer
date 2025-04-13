@@ -1,40 +1,48 @@
-/* App.css */
-
+/* General body styling */
 body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(to right, #ece9e6, #ffffff);
+  background-color: var(--bg-color);
+  color: var(--text-color);
   min-height: 100vh;
+  transition: all 0.3s ease;
 }
 
+/* Container styling */
 .container {
-  max-width: 1200px; /* Increased from 800px */
-  margin: 3rem auto;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
   padding: 2.5rem;
-  background-color: white;
-  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
-  border-radius: 12px;
+  background-color: var(--container-bg-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
 }
 
+/* Heading styling */
 h1 {
   text-align: center;
-  color: #333;
+  color: var(--heading-color);
   margin-bottom: 2rem;
 }
 
+/* Code input area */
 .code-input {
   width: 100%;
-  height: 200px;
+  height: 320px; /* Increased height by 60% */
   padding: 1rem;
   font-family: monospace;
   font-size: 1rem;
-  border: 1px solid #ccc;
+  border: 1px solid var(--border-color);
   border-radius: 8px;
   resize: vertical;
   box-sizing: border-box;
   margin-bottom: 1rem;
 }
 
+/* Review button styling */
 .review-button {
   background-color: #007bff;
   color: white;
@@ -55,20 +63,28 @@ h1 {
   background-color: #0056b3;
 }
 
+/* Review box styling */
 .review-box {
   margin-top: 2rem;
-  background-color: #f9f9f9;
+  background-color: var(--review-bg-color);
   padding: 1.5rem;
   border-radius: 10px;
   border-left: 4px solid #007bff;
+  height: 480px; /* Increased height by 60% */
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 .review-box h3 {
   margin-top: 0;
+  color: var(--heading-color);
 }
 
 .review-box ul {
   padding-left: 1.2rem;
+  list-style-type: none;
 }
 
 .review-box li {
@@ -76,22 +92,24 @@ h1 {
   line-height: 1.4;
 }
 
-/* Responsive */
-@media (max-width: 600px) {
-  .container {
-    padding: 1rem;
-  }
-
-  .code-input {
-    height: 150px;
-  }
-
-  .review-button {
-    width: 100%;
-    margin-top: 1rem;
-  }
+.review-box li::before {
+  content: '🟢 ';
+  margin-right: 0.5rem;
 }
 
+/* Error state for review box */
+.review-box.error {
+  background-color: #ffdddd;
+  color: red;
+  border: 1px solid red;
+}
+
+.review-box.error h3,
+.review-box.error p {
+  color: red;
+}
+
+/* Flex container layout */
 .flex-container {
   display: flex;
   gap: 1rem;
@@ -103,17 +121,10 @@ h1 {
 .review-box {
   flex: 1;
   min-width: 300px;
-  height: 300px;
   box-sizing: border-box;
 }
 
-.review-box {
-  overflow-y: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-}
-
+/* Responsive design */
 @media (max-width: 768px) {
   .flex-container {
     flex-direction: column;
@@ -121,7 +132,7 @@ h1 {
 
   .code-input,
   .review-box {
-    height: 250px;
+    height: 400px;
   }
 }
 
@@ -131,21 +142,11 @@ h1 {
   }
 
   .code-input {
-    height: 200px;
+    height: 320px;
   }
 
   .review-button {
     width: 100%;
     margin-top: 1rem;
   }
-}
-
-.review-box ul {
-  padding-left: 1.2rem;
-  list-style-type: none; /* ❌ Remove default bullet */
-}
-
-.review-box li::before {
-  content: '🟢 ';
-  margin-right: 0.5rem;
 }

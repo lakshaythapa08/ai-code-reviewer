@@ -1,0 +1,109 @@
+/* Default light mode variables */
+:root {
+  --bg-color: white;
+  --text-color: black;
+  --review-bg-color: #f9f9f9;
+  --border-color: #ccc;
+  --heading-color: black; /* Default heading color for light mode */
+}
+
+/* Dark Mode Variables */
+[data-theme='dark'] {
+  --bg-color: #121212; /* Dark background for the whole page */
+  --text-color: #ffffff; /* Light text color */
+  --review-bg-color: #1c1c1c; /* Darker background for the review box */
+  --border-color: #444; /* Dark border color for elements */
+  --heading-color: #ffffff; /* White heading color for dark mode */
+}
+
+/* Body and container styling */
+body, .container, .code-input, .review-box {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: all 0.3s ease;
+}
+
+/* Review box styling */
+.review-box {
+  background-color: var(--review-bg-color); /* Darker background for the review box */
+  color: var(--text-color); /* Ensure text remains visible */
+  border: 1px solid var(--border-color); /* Darker border for review box */
+}
+
+/* Heading styling */
+h1, h3 {
+  color: var(--heading-color); /* Heading color changes based on theme */
+}
+
+/* Button styling */
+.review-button {
+  background-color: #007bff;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+}
+
+.review-button:disabled {
+  background-color: #999;
+  cursor: not-allowed;
+}
+
+.review-button:hover:not(:disabled) {
+  background-color: #0056b3;
+}
+
+/* Dark Mode Button specific styling */
+[data-theme='dark'] .review-button {
+  background-color: #007bff;
+}
+
+[data-theme='dark'] .review-button:hover:not(:disabled) {
+  background-color: #0056b3;
+}
+
+[data-theme='dark'] .review-button:disabled {
+  background-color: #999;
+}
+
+/* UI Switch styling for dark mode toggle */
+.ui-switch {
+  --switch-bg: rgb(135, 150, 165);
+  --switch-width: 48px;
+  --switch-height: 20px;
+  --circle-diameter: 32px;
+  --circle-bg: rgb(232, 89, 15);
+  --circle-inset: calc((var(--circle-diameter) - var(--switch-height)) / 2);
+}
+
+.ui-switch input {
+  display: none;
+}
+
+.slider {
+  width: var(--switch-width);
+  height: var(--switch-height);
+  background: var(--switch-bg);
+  border-radius: 999px;
+  position: relative;
+  cursor: pointer;
+}
+
+.slider .circle {
+  top: calc(var(--circle-inset) * -1);
+  left: 0;
+  width: var(--circle-diameter);
+  height: var(--circle-diameter);
+  position: absolute;
+  background: var(--circle-bg);
+  border-radius: inherit;
+  transition: left 150ms, transform 150ms;
+}
+
+.ui-switch input:checked + .slider .circle {
+  left: calc(100% - var(--circle-diameter));
+  background-color: rgb(0, 56, 146);
+}

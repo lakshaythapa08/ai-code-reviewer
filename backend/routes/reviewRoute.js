@@ -3,10 +3,11 @@ const router=express.Router();
 const getGeminiReview = require('../utils/gemini');
 
 router.post('/', async (req, res) => {
-  const {code}  = req.body;
-  console.log(req.body);
+  let {code}  = req.body;
+  code=code.trim();
+  console.log(code.length);
 
-  if (!code) {
+  if (!code || code.length==0) {
     return res.status(400).json({ error: 'Code is required' });
   }
 
